@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.MemberMapper">
+
+	<select id="login" parameterType="map" resultType="MemberDto">
+		select userid, userpwd, username, email, phone, address
+		from member
+		where userid = #{userid} and userpwd = #{userpwd}
+	</select>
+	
+	<select id="searchAll" parameterType="PageBean" resultType="MemberDto">
+		select userid, userpwd, username, email, phone, address
+		from member
+	</select>
+	
+	<select id="getMember" parameterType="String" resultType="MemberDto">
+		select userid, userpwd, username, email, phone, address
+		from member
+		where userid = #{userid}
+	</select>
+	
+	<insert id="insertMember" parameterType="MemberDto">
+		insert into member (userid, userpwd, username, email, phone, address)
+		values (#{userid}, #{userpwd}, #{username}, #{email}, #{phone}, #{address})
+	</insert>
+	
+	<update id="updateMember" parameterType="MemberDto">
+		update member
+		set userpwd = #{userpwd}, email = #{email}, address = #{address}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="removeMember" parameterType="String">
+		delete from member
+		where userid = #{userid}
+	</delete>
+	
+	<select id="totalCount" parameterType="PageBean" resultType="int">
+		select count(*)
+		from member
+	</select>
+	<select id="getForgotpwd" parameterType="map" resultType="String">
+		select userpwd
+		from member
+		where userid=#{hintid} and email=#{hintemail}
+	</select>
+	
+	<select id="listMember" parameterType="map" resultType="MemberDto">
+		select userid, userpwd, username, email, phone, address
+		from member
+		<if test="word != null and word != ''">
+			<if test="key == 'userid'">
+				where userid like concat('%', #{word}, '%')
+			</if>
+			<if test="key == 'username'">
+				where username like concat('%', #{word}, '%')
+			</if>		
+		</if>
+	</select>
+</mapper>

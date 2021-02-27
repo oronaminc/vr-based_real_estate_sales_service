@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.BoardMapper">
+	<select id="listPost" parameterType="PageBean" resultType="BoardPostDto">
+		select postid, userid, isselling, title, content,  sido, gugun, dong, price, dealtype, housetype, ispetallowed, usertag1, usertag2, usertag3, housepicimg, housemapimg
+		from boardpost
+	</select>
+	
+	<select id="getPost" parameterType="String" resultType="BoardPostDto">
+		select postid, userid, isselling, title, content,  sido, gugun, dong, price, dealtype, housetype, ispetallowed, usertag1, usertag2, usertag3, housepicimg, housemapimg
+		from boardpost
+		where postid = #{postid}
+	</select>
+	
+	<insert id="insertPost" parameterType="BoardPostDto">
+		insert into boardpost (userid, isselling, title, content,  sido, gugun, dong, price, dealtype, housetype, ispetallowed, usertag1, usertag2, usertag3, housepicimg, housemapimg)
+		values (#{userid}, #{isselling}, #{title}, #{content}, #{sido}, #{gugun}, #{dong}, #{price}, #{dealtype}, #{housetype}, #{ispetallowed}, #{usertag1}, #{usertag2}, #{usertag3}, #{housepicimg}, #{housemapimg})
+	</insert>
+	
+	<update id="updatePost" parameterType="BoardPostDto">
+		update boardpost
+		set isselling = #{isselling}, title = #{title}, content = #{content}, sido = #{sido}, 
+		gugun = #{gugun}, dong = #{dong}, price = #{price}, dealtype = #{dealtype}, housetype = #{housetype}, ispetallowed = #{ispetallowed},
+		usertag1 = #{usertag1}, usertag2 = #{usertag2}, usertag3 = #{usertag3}, housepicimg = #{housepicimg}, housemapimg = #{housemapimg}
+		
+		where postid = #{postid}
+	</update>
+	
+	<delete id="deletePost" parameterType="String">
+		delete from boardpost
+		where postid = #{postid}
+	</delete>
+	
+	<select id="getSidoName" parameterType="String" resultType="String">
+		select sido_name
+		from sidocode
+		where sido_code like concat(#{sidocode},'%')
+	</select>
+	
+	<select id ="getGugunName" parameterType="String" resultType="String">
+		select gugun_name
+		from guguncode
+		where gugun_code like concat(#{guguncode},'%')
+	</select>
+	
+	<select id="searchPostsByD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where dealtype = #{dealtype};
+	</select>
+	
+	<select id="searchPostsByH" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where housetype = #{housetype}
+	</select>
+	
+	<select id="searchPostsByHD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where housetype = #{housetype} and dealtype = #{dealtype}
+	</select>
+	
+	<select id="searchPostsByP" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where ispetallowed = #{ispetallowed}
+	</select>
+	<select id="searchPostsByPD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where ispetallowed = #{ispetallowed} and dealtype = #{dealtype}
+	</select>
+	<select id="searchPostsByPH" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where ispetallowed = #{ispetallowed} and housetype = #{housetype}
+	</select>
+	<select id="searchPostsByPHD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where ispetallowed = #{ispetallowed} and housetype = #{housetype} and dealtype = #{dealtype}
+	</select>
+	
+	<select id="searchPostsByS" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling}
+	</select>
+	
+	<select id="searchPostsBySD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and dealtype = #{dealtype}
+	</select>
+	
+	<select id="searchPostsBySH" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and housetype = #{housetype} 
+	</select>
+	
+	<select id="searchPostsBySHD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and housetype = #{housetype} and dealtype = #{dealtype}
+	</select>
+	
+	<select id="searchPostsBySP" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and ispetallowed = #{ispetallowed}
+	</select>
+
+	<select id="searchPostsBySPD" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and ispetallowed = #{ispetallowed} and dealtype = #{dealtype}
+	</select>
+	
+	<select id="searchPostsBySPH" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and ispetallowed = #{ispetallowed} and housetype = #{housetype}
+	</select>
+
+	<select id="searchPostsByAll" parameterType="Map" resultType="BoardPostDto">
+		select * 
+		from boardpost
+		where isselling = #{isselling} and ispetallowed = #{ispetallowed} and housetype = #{housetype} and dealtype = #{dealtype}
+	</select>
+
+</mapper>
