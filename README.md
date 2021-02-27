@@ -1,5 +1,8 @@
 # vr-based_real_estate_sales_service
 # 1. 화면 설계서
+<div>
+  <img width="800" src="./HappyHouse_Spring_Image/1a.png"/>
+</div>
 ## 1-A. 메인 페이지
 ## 1-B. 로그인/로그아웃 및 회원정보 관리 페이지
 ## 1-C. 게시판-게시글 목록 및 등록
