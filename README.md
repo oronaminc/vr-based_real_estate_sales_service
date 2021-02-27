@@ -55,6 +55,10 @@
   <img width="800" src="./HappyHouse_Spring_Image/4d.png"/>
 </div>
 
+# 5. 개발환경 및 API 출처
+<div>
+  <img width="800" src="./HappyHouse_Spring_Image/structure.png"/>
+</div>
 
 # Function
 
