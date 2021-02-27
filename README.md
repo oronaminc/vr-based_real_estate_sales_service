@@ -1,15 +1,24 @@
 # vr-based_real_estate_sales_service
 # 1. 화면 설계서
-## 1-B. 로그인/로그아웃 및 회원정보 관리 페이지
+## 1-A. 메인 페이지
 <div>
-  <p> 1-A. 메인 페이지 </p>
   <img width="800" src="./HappyHouse_Spring_Image/1a.png"/>
   <img width="800" src="./HappyHouse_Spring_Image/1aa.png"/>
 </div>
-
+## 1-B. 로그인/로그아웃 및 회원정보 관리 페이지
+<div>
+  <img width="800" src="./HappyHouse_Spring_Image/1b.png"/>
+</div>
 ## 1-C. 게시판-게시글 목록 및 등록
+<div>
+  <img width="800" src="./HappyHouse_Spring_Image/1c.png"/>
+  <img width="800" src="./HappyHouse_Spring_Image/1cc.png"/>
+</div>
 ## 1-D. 게시판-게시글 상세내용 및 수정
-
+<div>
+  <img width="800" src="./HappyHouse_Spring_Image/1d.png"/>
+  <img width="800" src="./HappyHouse_Spring_Image/1dd.png"/>
+</div>
 # 2. 클래스 다이어 그램
 
 # 3. Mysql DB 구조도 (ERD)
