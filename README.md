@@ -31,26 +31,26 @@
 
 # 3. Mysql DB 구조도 (ERD)
 <div>
-  <img width="800" src="./HappyHouse_Spring_Image/3a.png"/>
+  <img width="800" src="./HappyHouse_Spring_Image/3.png"/>
 </div>
 
 # 4. 요구사항 정의서 (Use Case Diagram)
-# 4-A. VR 기반 Pet House Map
+## 4-A. VR 기반 Pet House Map
 <div>
   <img width="800" src="./HappyHouse_Spring_Image/4a.png"/>
 </div>
 
-# 4-B. 게시판 (우리끼리 당근매물) 게시글 조회
+## 4-B. 게시판 (우리끼리 당근매물) 게시글 조회
 <div>
   <img width="800" src="./HappyHouse_Spring_Image/4b.png"/>
 </div>
 
-# 4-C. 게시판-게시글 등록
+## 4-C. 게시판-게시글 등록
 <div>
   <img width="800" src="./HappyHouse_Spring_Image/4c.png"/>
 </div>
 
-# 4-D. 기본 회원관리 
+## 4-D. 기본 회원관리 
 <div>
   <img width="800" src="./HappyHouse_Spring_Image/4d.png"/>
 </div>
